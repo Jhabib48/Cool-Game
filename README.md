@@ -1,15 +1,12 @@
 # Cool-Game
 Sum-Awesome Game: A Java math-based combat game featuring addition puzzles on a 3x3 grid. Complete fills to attack opponents using weapons and rings with special abilities. Implements Observer and Null Object patterns with clean MVC architecture.
 
-
-Sum-Awesome Game - CMPT 213 Assignment 4
-A strategic mathematics-based combat game implementation featuring addition-based gameplay, equipment systems, and design pattern adherence. Developed as part of the CMPT 213 Software Engineering curriculum at Simon Fraser University.
-
 Project Overview
-This Java application implements a turn-based game where players solve addition problems on a 3x3 grid to complete "fills" and attack opponent characters. The game features an extensible equipment system, comprehensive statistics tracking, and a clean architectural design following SOLID principles.
+A strategic mathematics-based combat game implementation featuring addition-based gameplay, equipment systems, and design pattern adherence. Developed as part of the CMPT 213 Software Engineering curriculum at Simon Fraser University.
 
 Core Features
 Gameplay Mechanics
+
 3×3 Number Grid System: Players enter sums matching center + outer cell values
 
 Fill Completion System: Complete all 8 outer cells to trigger attacks
@@ -19,6 +16,7 @@ Position-Based Targeting: Attacks target left, middle, or right opponents based 
 Health Management: Balance offensive moves with defensive considerations against random enemy attacks
 
 Equipment System
+
 Six Unique Weapons: Each with distinct activation conditions and targeting behaviors
 
 Six Magical Rings: Provide damage bonuses based on fill strength properties
@@ -26,6 +24,7 @@ Six Magical Rings: Provide damage bonuses based on fill strength properties
 Extensible Design: New equipment can be added without modifying existing code
 
 Game Management
+
 Real-time Statistics: Track equipment activations, matches won/lost, damage dealt/received
 
 Cheat Command System: Developer commands for testing and debugging
@@ -36,6 +35,7 @@ Observer Pattern Implementation: Strict separation between model and view compon
 
 Architectural Design
 Design Patterns Implemented
+
 Observer Pattern: Clean Model-View-Controller separation with model classes never performing output
 
 Null Object Pattern: Safe handling of empty equipment states
@@ -45,6 +45,7 @@ Open-Closed Principle: Extensible weapons and rings system using composition
 Composition Over Inheritance: Flexible behavior combinations through component-based design
 
 Package Structure
+
 text
 src/
 ├── Model/          # Game logic and state management
@@ -57,6 +58,7 @@ src/
     └── Main.java    # Application entry point and command processing
 Equipment Details
 Weapons
+
 Lightning Wand: Activates on fast fill completion (<10 seconds), targets additional random opponent
 
 Fire Staff: Activates with large fills (15+ cells), hits main target and adjacent opponents
@@ -70,6 +72,7 @@ Diamond Sword: Activates with descending number selection, hits main target with
 Sparkle Dagger: Activates on moderate fill completion (<20 seconds), targets additional random opponent
 
 Rings
+
 The Big One: 50% damage bonus if fill strength ≥ 160
 
 The Little One: 50% damage bonus if fill strength ≤ 90
@@ -84,6 +87,7 @@ The Two Ring: 1000% damage bonus if fill strength is a power of 2
 
 Game Commands
 Standard Commands
+
 Enter a numeric sum to make a move
 
 gear: Display currently equipped weapon and rings
@@ -95,6 +99,7 @@ new: End current match (counts as loss) and start new match
 quit: Exit the game
 
 Cheat Commands (prefixed with cheat)
+
 lowhealth: Set all enemies to low health (10 HP)
 
 highhealth: Set all enemies to high health (200 HP)
@@ -111,6 +116,7 @@ new: Start new match (alternative to direct command)
 
 Technical Implementation
 Key Design Decisions
+
 Model-View Separation: Game model emits structured events; UI handles all display logic
 
 Behavioral Composition: Weapons and rings built from reusable condition and modifier components
@@ -120,6 +126,7 @@ Statistical Tracking: Centralized statistic tracker using observer pattern for e
 Damage Calculation: Proper rounding to nearest integer as per specification requirements
 
 Compliance with Requirements
+
 Implements all specified weapons and rings with correct behaviors
 
 Follows Open-Closed Principle for equipment extensibility
@@ -134,9 +141,11 @@ Includes full cheat system for testing
 
 Building and Running
 Compilation
+
 bash
 javac -d out UI/*.java Model/*.java Model/weapons/*.java Model/weapons/behaviors/*.java Model/rings/*.java
 Execution
+
 bash
 java -cp out UI.Main
 Academic Context
